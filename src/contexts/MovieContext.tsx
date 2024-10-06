@@ -23,7 +23,8 @@ interface MovieContextType {
 
 const MovieContext = createContext<MovieContextType | undefined>(undefined)
 
-const API_KEY = '2853c232'
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 
 export const MovieProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [watchlist, setWatchlist] = useState<{ [email: string]: Movie[] }>({})
