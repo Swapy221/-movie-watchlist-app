@@ -59,13 +59,13 @@ export const MovieProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }
 
   const searchMovies = async (query: string): Promise<Movie[]> => {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`)
     const data = await response.json()
     return data.Search || []
   }
 
   const getMovieDetails = async (id: string): Promise<MovieDetails> => {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`)
     const data = await response.json()
     return data as MovieDetails
   }
